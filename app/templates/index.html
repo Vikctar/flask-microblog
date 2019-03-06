@@ -4,9 +4,9 @@
     <h1>Hey, {{ user.username }}!</h1>
     {% for post in posts %}
     <div>
-        <p>
-            {{ post.author.username }} says: <strong>{{ post.body }}</strong>
-        </p>
+        <ul>
+            <li>{{ post.author.username }} says: <strong>{{ post.body }}</strong></li>
+        </ul>
     </div>
     {% endfor %}
 {% endblock %}
