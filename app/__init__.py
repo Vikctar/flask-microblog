@@ -1,4 +1,7 @@
 from flask import Flask
+from flask_migrate import Migrate
+from flask_sqlalchemy import SQLAlchemy
+
 from config import Config
 """
 This script creates the application object as an instance of class Flask
@@ -10,4 +13,7 @@ app = Flask(__name__)
 # Read and apply the config file.
 app.config.from_object(Config)
 
-from app import routes
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+
+from app import routes, models
